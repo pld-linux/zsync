@@ -8,12 +8,12 @@ Summary(uk):	Програма для ефективного в╕ддаленого оновлення файл╕в
 Summary(zh_CN):	[м╗я╤]╢╚йД╧╓╬ъ
 Summary(zh_TW):	[ЁЯ╟т]$(B6G?i╓У(c(B
 Name:		zsync
-Version:	0.2.3
+Version:	0.3.1
 Release:	0.1
 License:	GPL
 Group:		Daemons
 Source0:	http://dl.sourceforge.net/zsync/%{name}-%{version}.tar.gz
-# Source0-md5:	f9314753080ff8a16d4c8a91f334e419
+# Source0-md5:	7ac99a418a8eafc7bfc4676d3f83e7d2
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	popt-devel
