@@ -8,12 +8,12 @@ Summary(uk):	Програма для ефективного в╕ддаленого оновлення файл╕в
 Summary(zh_CN):	[м╗я╤]╢╚йД╧╓╬ъ
 Summary(zh_TW):	[ЁЯ╟т]$(B6G?i╓У(c(B
 Name:		zsync
-Version:	0.4.1
+Version:	0.4.2
 Release:	0.1
 License:	GPL
 Group:		Daemons
 Source0:	http://dl.sourceforge.net/zsync/%{name}-%{version}.tar.gz
-# Source0-md5:	dfdf4cd0856fb88f58d6a4169ddb2835
+# Source0-md5:	f9891b412717a18805ea19211bdf1407
 URL:		http://zsync.moria.org.uk/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -126,7 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README
-%attr(644,root,root) %config(noreplace,missingok) %verify(not md5 mtime size) /etc/env.d/*
+%config(noreplace,missingok) %verify(not md5 mtime size) /etc/env.d/*
 %dir %{_sysconfdir}
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/zsyncd.conf
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/zsyncd.secrets
