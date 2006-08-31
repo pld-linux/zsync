@@ -9,7 +9,7 @@ Summary(zh_CN):	[Í¨Ñ¶]´«Êä¹¤¾ß
 Summary(zh_TW):	[³ñ°Ô]$(B6G?i¤õ(c(B
 Name:		zsync
 Version:	0.5
-Release:	1
+Release:	2
 License:	GPL
 Group:		Daemons
 Source0:	http://zsync.moria.org.uk/download/%{name}-%{version}.tar.bz2
@@ -18,7 +18,7 @@ URL:		http://zsync.moria.org.uk/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	popt-devel
-BuildRequires:	rpmbuild(macros) >= 1.316
+BuildRequires:	rpmbuild(macros) >= 1.318
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/zsyncd
