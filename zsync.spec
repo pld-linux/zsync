@@ -18,6 +18,7 @@ URL:		http://zsync.moria.org.uk/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	popt-devel
+BuildRequires:	rpmbuild(macros) >= 1.316
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/zsyncd
@@ -122,6 +123,12 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}/zsync
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%env_update
+
+%postun
+%env_update
 
 %files
 %defattr(644,root,root,755)
