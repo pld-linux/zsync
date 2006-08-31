@@ -8,12 +8,12 @@ Summary(uk):	Програма для ефективного в╕ддаленого оновлення файл╕в
 Summary(zh_CN):	[м╗я╤]╢╚йД╧╓╬ъ
 Summary(zh_TW):	[ЁЯ╟т]$(B6G?i╓У(c(B
 Name:		zsync
-Version:	0.4.2
-Release:	0.1
+Version:	0.5
+Release:	1
 License:	GPL
 Group:		Daemons
-Source0:	http://dl.sourceforge.net/zsync/%{name}-%{version}.tar.gz
-# Source0-md5:	f9891b412717a18805ea19211bdf1407
+Source0:	http://zsync.moria.org.uk/download/%{name}-%{version}.tar.bz2
+# Source0-md5:	08beaf3fa95f16d8a2db2f7f3ea21196
 URL:		http://zsync.moria.org.uk/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -101,22 +101,24 @@ install -d $RPM_BUILD_ROOT{%{_sysconfdir},/etc/env.d,/var/log}
 :> $RPM_BUILD_ROOT/var/log/zsyncd.log
 :> $RPM_BUILD_ROOT%{_sysconfdir}/zsyncd.secrets
 
-cat << EOF > $RPM_BUILD_ROOT%{_sysconfdir}/zsyncd.conf
+cat << 'EOF' > $RPM_BUILD_ROOT%{_sysconfdir}/zsyncd.conf
 log file = /var/log/zsyncd.log
 EOF
 
-cat << EOF > $RPM_BUILD_ROOT/etc/env.d/CVSIGNORE
+cat << 'EOF' > $RPM_BUILD_ROOT/etc/env.d/CVSIGNORE
 #CVSIGNORE=
 EOF
-cat << EOF > $RPM_BUILD_ROOT/etc/env.d/ZSYNC_RSH
+cat << 'EOF' > $RPM_BUILD_ROOT/etc/env.d/ZSYNC_RSH
 #ZSYNC_RSH=
 EOF
-cat << EOF > $RPM_BUILD_ROOT/etc/env.d/ZSYNC_PROXY
+cat << 'EOF' > $RPM_BUILD_ROOT/etc/env.d/ZSYNC_PROXY
 #ZSYNC_PROXY=
 EOF
-cat << EOF > $RPM_BUILD_ROOT/etc/env.d/ZSYNC_PASSWORD
+cat << 'EOF' > $RPM_BUILD_ROOT/etc/env.d/ZSYNC_PASSWORD
 #ZSYNC_PASSWORD=
 EOF
+
+rm -rf $RPM_BUILD_ROOT%{_docdir}/zsync
 
 %clean
 rm -rf $RPM_BUILD_ROOT
