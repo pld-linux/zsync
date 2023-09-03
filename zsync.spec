@@ -8,16 +8,15 @@ Summary(uk.UTF-8):	Програма для ефективного віддале
 Summary(zh_CN.UTF-8):	[通讯]传输工具
 Summary(zh_TW.UTF-8):	[喙啪]$(B6G?i火(c(B
 Name:		zsync
-Version:	0.5
-Release:	2
-License:	GPL
+Version:	0.6.1
+Release:	1
+License:	Artistic v2
 Group:		Daemons
+#Source0Download: http://zsync.moria.org.uk/downloads
 Source0:	http://zsync.moria.org.uk/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	08beaf3fa95f16d8a2db2f7f3ea21196
+# Source0-md5:	cab880e6cb3a5b0976b0930a5b6e3256
 URL:		http://zsync.moria.org.uk/
-BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
-BuildRequires:	popt-devel
 BuildRequires:	rpmbuild(macros) >= 1.318
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -81,7 +80,6 @@ zsync - це швидша та гнучкіша альтернатива rcp, я
 
 %build
 cp -f /usr/share/automake/config.sub .
-%{__autoconf}
 %configure \
 	%{?with_rsh:--with-rsh=rsh} \
 	--enable-ipv6 \
@@ -133,10 +131,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README
-%config(noreplace,missingok) %verify(not md5 mtime size) /etc/env.d/*
+%config(noreplace,missingok) %verify(not md5 mtime size) /etc/env.d/CVSIGNORE
+%config(noreplace,missingok) %verify(not md5 mtime size) /etc/env.d/ZSYNC_RSH
+%config(noreplace,missingok) %verify(not md5 mtime size) /etc/env.d/ZSYNC_PROXY
+%config(noreplace,missingok) %verify(not md5 mtime size) /etc/env.d/ZSYNC_PASSWORD
 %dir %{_sysconfdir}
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/zsyncd.conf
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/zsyncd.secrets
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/zsync
+%attr(755,root,root) %{_bindir}/zsyncmake
 %attr(640,root,root) %ghost /var/log/zsyncd.log
-%{_mandir}/man1/*
+%{_mandir}/man1/zsync.1*
+%{_mandir}/man1/zsyncmake.1*
