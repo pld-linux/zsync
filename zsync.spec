@@ -8,14 +8,14 @@ Summary(uk.UTF-8):	Програма для ефективного віддале
 Summary(zh_CN.UTF-8):	[通讯]传输工具
 Summary(zh_TW.UTF-8):	[喙啪]$(B6G?i火(c(B
 Name:		zsync
-Version:	0.6.2
+Version:	0.6.3
 Release:	1
 License:	Artistic v2
 Group:		Daemons
-#Source0Download: http://zsync.moria.org.uk/downloads
-Source0:	http://zsync.moria.org.uk/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	862f90bafda118c4d3c5ee6477e50841
-URL:		http://zsync.moria.org.uk/
+#Source0Download: https://zsync.moria.org.uk/downloads
+Source0:	https://zsync.moria.org.uk/download/%{name}-%{version}.tar.bz2
+# Source0-md5:	c414b114d30b4589946d35a0ce4c285f
+URL:		https://zsync.moria.org.uk/
 BuildRequires:	automake
 BuildRequires:	rpmbuild(macros) >= 1.318
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
